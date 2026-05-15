@@ -67,6 +67,8 @@ def fetch_latest_news():
         )
 
         response = requests.get(url)
+        print("STATUS:", response.status_code)
+        print("RESPONSE:", response.text)
 
         if response.status_code != 200:
             continue
