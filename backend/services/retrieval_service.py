@@ -41,21 +41,16 @@ def search_news(query: str, top_k: int = 5):
     # get top results
     top_results = scored[:top_k]
 
-    # if no data in DB at all
-    #if not top_results:
-        #fetch_news_by_query(query)
-        #return search_news(query)
-
-    # check similarity threshold
-    best_score = top_results[0][0]
-
-    # If similarity too low, trigger fallback
-    #if best_score < 0.35:   # threshold can be tuned
-        #fetch_news_by_query(query)
-        #return search_news(query)
-
+    # handle empty results safely
+    if not top_results:
+        return []
+    
     # otherwise return results
     return [item[1] for item in top_results]
+
+
+
+
 
 
 
