@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-API_BASE = "http://127.0.0.1:8000"
+API_BASE = "https://global-semantic-news-search-production.up.railway.app"
 
 st.set_page_config(page_title="Global Semantic News Search Engine", layout="wide")
 
@@ -90,6 +90,9 @@ if st.button("Fetch Latest News (Global Seed)"):
             st.success(data.get("message", "News fetched"))
         except:
             st.error("Backend not running.")
+
+
+            
 
 
 
